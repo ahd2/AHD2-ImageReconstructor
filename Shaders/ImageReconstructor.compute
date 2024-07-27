@@ -1,0 +1,16 @@
+#pragma kernel SplitR
+
+RWTexture2D<float4> outputTexture;
+Texture2D inputTexture;
+
+[numthreads(8,8,1)]
+void SplitR (uint3 id :  SV_DispatchThreadID)
+{
+    float4 color = float4(inputTexture[id.xy].r,inputTexture[id.xy].r,inputTexture[id.xy].r,inputTexture[id.xy].r);
+    outputTexture[id.xy] = color;
+    // //输出贴图的像素
+    // outputTexture[id.xy].r = inputTexture[id.xy].r;
+    // outputTexture[id.xy].g = inputTexture[id.xy].r;
+    // outputTexture[id.xy].b = inputTexture[id.xy].r;
+    // outputTexture[id.xy].a = inputTexture[id.xy].r;
+}
