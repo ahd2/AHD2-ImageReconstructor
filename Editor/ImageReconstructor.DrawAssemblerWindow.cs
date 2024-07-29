@@ -141,9 +141,28 @@ public partial class ImageReconstructor : EditorWindow
             Assemble();
         }
 
-        // 再次添加弹性空间，使按钮水平居中。
         GUILayout.FlexibleSpace();
-        //Assemble();
+        
+        if (GUILayout.Button("获取大小 \n （需拖入贴图）",GUILayout.Width(120),GUILayout.Height(40)))
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (texture2Ds[i] != null)
+                {
+                    width = texture2Ds[i].width;
+                    height = texture2Ds[i].height;
+                    
+                    message = $"已取读通道 {(i == 0 ? "R" : i == 1 ? "G" : i == 2 ? "B" : "A")} 的贴图大小。";
+                    messageType = MessageType.Info;
+                    GUIUtility.ExitGUI();//提前结束绘制，不加这个报错不匹配
+                    return;
+                }
+                message = "未拖入贴图，无法取读。";
+                messageType = MessageType.Error;
+                GUIUtility.ExitGUI();//提前结束绘制，不加这个报错不匹配
+            }
+        }
+        GUILayout.FlexibleSpace();
         // 结束水平布局组。
         GUILayout.EndHorizontal();
         
@@ -243,7 +262,7 @@ public partial class ImageReconstructor : EditorWindow
         }
     }
     
-    // 辅助方法，根据索引返回对应的布尔
+    // 辅助方法，根据索引返回对应的布尔(布尔值表示该通道是否勾选使用纯色)
     private bool GetBoolByIndex(int index)
     {
         switch (index)

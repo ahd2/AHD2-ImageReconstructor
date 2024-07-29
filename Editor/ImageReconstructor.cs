@@ -17,16 +17,6 @@ public partial class ImageReconstructor : EditorWindow
 
     // 当前选中的子界面类型
     private SubWindowType currentSubWindow = SubWindowType.DividerWindow;
-    
-    enum TextureFormat
-    {
-        Alpha8, 
-        RGB24, 
-        RGBA32, 
-        // 其他贴图格式...
-    }
-    // 定义一个变量来存储当前选中的贴图格式
-    TextureFormat currentFormat = TextureFormat.Alpha8; // 假设textureFormat是你要展示的成员变量
 
     private string currentPath;//图片保存路径
     
