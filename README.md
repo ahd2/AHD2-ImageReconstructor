@@ -1,6 +1,6 @@
 # [AHD2-ImageReconstructor](https://github.com/ahd2/AHD2-ImageReconstructor)
 
-<img alt="GitHub Release" src="https://img.shields.io/github/v/release/ahd2/AHD2-ImageReconstructor?style=for-the-badge"> <img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/ahd2/AHD2-ImageReconstructor?style=for-the-badge"> <img alt="GitHub License" src="https://img.shields.io/github/license/ahd2/ImageReconstructor?style=for-the-badge">
+<img alt="GitHub Release" src="https://img.shields.io/github/v/release/ahd2/AHD2-ImageReconstructor?style=for-the-badge"> <img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/ahd2/AHD2-ImageReconstructor?style=for-the-badge"> <img alt="GitHub License" src="https://img.shields.io/github/license/ahd2/AHD2-ImageReconstructor?style=for-the-badge">
 
 一款处理图片的Unity编辑器工具，支持将单图片通道分离为多张图片或多图片合成一张多通道图片。
 
