@@ -137,7 +137,12 @@ public partial class ImageReconstructor : EditorWindow
             }
             
             // 弹出文件选择窗口  
-            currentPath = EditorUtility.OpenFolderPanel("选择路径","","");
+            string assetPath = AssetDatabase.GetAssetPath(Selection.activeObject);
+            if (string.IsNullOrEmpty(assetPath)) 
+            {
+                assetPath = "Assets";
+            }
+            currentPath = EditorUtility.OpenFolderPanel("选择路径", assetPath, "");
             Assemble();
         }
 

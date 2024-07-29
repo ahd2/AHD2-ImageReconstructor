@@ -53,7 +53,18 @@ public partial class ImageReconstructor : EditorWindow
                 return;
             }
             // 弹出文件选择窗口  
-            currentPath = EditorUtility.OpenFolderPanel("选择路径","","");
+            string assetPath = AssetDatabase.GetAssetPath(Selection.activeObject);
+            if (string.IsNullOrEmpty(assetPath)) 
+            {
+                assetPath = "Assets";
+            }
+            currentPath = EditorUtility.OpenFolderPanel("选择路径", assetPath, "");
+            
+            if (currentPath == "")
+            {
+                GUIUtility.ExitGUI();//提前结束绘制，不加这个报错不匹配
+                return;
+            }
             SplitToAlpha8();
             message = "通道分离成功!";
             messageType = MessageType.Info;
