@@ -1,4 +1,4 @@
-using System.IO;
+    using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -162,10 +162,10 @@ public partial class ImageReconstructor : EditorWindow
                     GUIUtility.ExitGUI();//提前结束绘制，不加这个报错不匹配
                     return;
                 }
-                message = "未拖入贴图，无法取读。";
-                messageType = MessageType.Error;
-                GUIUtility.ExitGUI();//提前结束绘制，不加这个报错不匹配
             }
+            message = "未拖入贴图，无法取读。";
+            messageType = MessageType.Error;
+            GUIUtility.ExitGUI();//提前结束绘制，不加这个报错不匹配
         }
         GUILayout.FlexibleSpace();
         // 结束水平布局组。
